@@ -191,7 +191,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item6.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item6.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Rose ceramic</h5>
@@ -222,7 +222,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item5.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item5.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Purple Rose ceramic</h5>
@@ -253,7 +253,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item2.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item2.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Apple Flower ceramic</h5>
@@ -284,7 +284,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item3.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item3.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Butterfly Pea ceramic</h5>
@@ -315,7 +315,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item4.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item4.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Masala ceramic</h5>
@@ -346,7 +346,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100">
             <div class="image-holder" style="height: 250px; overflow: hidden;">
-              <img src="images/product-item1.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item1.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
             </div>
             <div class="card-body">
               <h5 class="card-title">Roselle ceramic</h5>
@@ -387,7 +387,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-6">
-              <img src="images/product-item6.jpg" alt="ceramic" class="img-fluid rounded">
+              <img src="assets/images/product-item6.jpg" alt="ceramic" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
               <h3>Rose ceramic</h3>

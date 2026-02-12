@@ -154,7 +154,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item6.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item6.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
@@ -202,7 +202,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item5.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item5.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
@@ -250,7 +250,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item2.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item2.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
@@ -298,7 +298,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item3.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item3.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
@@ -346,7 +346,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item4.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item4.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
@@ -394,7 +394,7 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
-              <img src="images/product-item1.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
+              <img src="assets/images/product-item1.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">

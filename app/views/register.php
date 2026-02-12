@@ -1,3 +1,8 @@
+<?php
+function e($v){ return htmlspecialchars($v ?? '', ENT_QUOTES, 'UTF-8'); }
+function cls_invalid($errors, $field){ return ($errors[$field] ?? '') !== '' ? 'is-invalid' : ''; }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,7 +45,7 @@
               </div>
             </form> -->
 
-            <form id="registerForm" method="post" action="/register" novalidate>
+            <form id="registerForm" method="post" action="/auth/register" novalidate>
                 <div id="formStatus" class="alert d-none"></div>
 
                 <div class="mb-3">

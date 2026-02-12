@@ -1,7 +1,7 @@
 <?php
 
 use app\controllers\ApiProductController;
-use app\controllers\ApiExampleController;
+use app\controllers\UserController;
 use app\middlewares\SecurityHeadersMiddleware;
 use flight\Engine;
 use flight\net\Router;
@@ -24,6 +24,26 @@ $router->group('', function(Router $router) use ($app) {
 
 	$router->get('/home', function() use ($app) {
 		$app->render('home');
+	});
+
+	$router->get('/profile', function() use ($app) {
+		$app->render('profile');
+	});
+
+	$router->get('/register', function() use ($app) {
+		$app->render('register');
+	});
+
+	$router->post('/auth/register', function () use ($app){
+		$email      = $app->request()->data->email ?? '';
+        $password   = $app->request()->data->password ?? '';
+        $username   = $app->request()->data->username ?? '';
+        $controller = new UserController($app);
+        $controller->connect($email, $password, $username);
+	}); 
+
+	$router->get('/shop', function() use ($app) {
+		$app->render('shop');
 	});
 
 	$router->get('/produit/@id', function($id) use ($app) {
