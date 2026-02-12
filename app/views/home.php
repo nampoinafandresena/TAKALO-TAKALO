@@ -225,7 +225,7 @@
             </svg>
           </button>
           <a href="index.html" class="navbar-brand order-2 order-lg-2 d-flex d-lg-none">
-            <!-- <img src="images/main-logo.png" alt="Logo"> -->
+            <!-- <img src="assets/images/main-logo.png" alt="Logo"> -->
           </a>
           <div class="offcanvas offcanvas-end order-3" tabindex="-1" id="bdNavbar"
             aria-labelledby="bdNavbarOffcanvasLabel">
@@ -286,7 +286,7 @@
                 </ul>
               </div>
               <a href="index.html" class="navbar-brand order-2 order-lg-2 d-none d-lg-flex">
-                <!-- <img src="images/main-logo.png" alt="Logo"> -->
+                <!-- <img src="assets/images/main-logo.png" alt="Logo"> -->
               </a>
               <ul
                 class="user-items list-unstyled d-none d-lg-flex justify-content-end align-items-center order-3 flex-grow-1 gap-5 m-0">
@@ -325,7 +325,7 @@
 
   <!-- INTRO -->
   <section id="intro" class="position-relative overflow-hidden"
-    style="background-image: url(images/banner-image1.jpg); background-repeat: no-repeat; background-position: center; width: 100%; height: 100vh;">
+    style="background-image: url(assets/images/banner-image1.jpg); background-repeat: no-repeat; background-position: center; width: 100%; height: 100vh;">
     <div class="container-lg">
       <div class="row">
         <div class="col-lg-5 col-md-8">
@@ -374,7 +374,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item6.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item6.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -387,7 +387,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item5.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item5.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -400,7 +400,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item2.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item2.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -413,7 +413,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item3.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item3.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -426,7 +426,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item4.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item4.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -439,7 +439,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item1.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item1.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -465,7 +465,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 image-zoom-effect">
           <div class="collection-item position-relative mx-auto">
             <div class="image-holder">
-              <img src="images/collection-item1.jpg" alt="product" class="img-fluid">
+              <img src="assets/images/collection-item1.jpg" alt="product" class="img-fluid">
               <div class="product-info position-absolute d-flex justify-content-center align-items-center">
                 <div class="border d-flex justify-content-center align-items-center text-center">
                   <div class="text-wrap">
@@ -484,7 +484,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 image-zoom-effect">
           <div class="collection-item position-relative mx-auto">
             <div class="image-holder">
-              <img src="images/collection-item2.jpg" alt="product" class="img-fluid">
+              <img src="assets/images/collection-item2.jpg" alt="product" class="img-fluid">
             </div>
             <div class="product-info position-absolute d-flex justify-content-center align-items-center">
               <div class="border d-flex justify-content-center align-items-center text-center">
@@ -503,7 +503,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12 mb-4 image-zoom-effect">
           <div class="collection-item position-relative mx-auto">
             <div class="image-holder">
-              <img src="images/collection-item3.jpg" alt="product" class="img-fluid">
+              <img src="assets/images/collection-item3.jpg" alt="product" class="img-fluid">
             </div>
             <div class="product-info position-absolute d-flex justify-content-center align-items-center">
               <div class="border d-flex justify-content-center align-items-center text-center">
@@ -637,7 +637,7 @@
   </section>
 
   <section id="video-player" class="video overflow-hidden position-relative"
-    style="background-image: url(images/video-item.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; width: 100%; height: 682px;">
+    style="background-image: url(assets/images/video-item.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; width: 100%; height: 682px;">
     <div class="row">
       <div class="video-content">
         <div class="video-bg">
@@ -683,7 +683,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item7.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item7.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -696,7 +696,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item8.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item8.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -709,7 +709,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item9.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item9.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -722,7 +722,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item10.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item10.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -735,7 +735,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item11.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item11.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -748,7 +748,7 @@
               <div class="swiper-slide image-zoom-effect">
                 <div class="product-item mx-auto">
                   <div class="image-holder mb-2">
-                    <img src="images/product-item12.jpg" alt="ceramic" class="img-fluid">
+                    <img src="assets/images/product-item12.jpg" alt="ceramic" class="img-fluid">
                   </div>
                   <div class="product-info text-center">
                     <h3 class="  m-0">
@@ -769,7 +769,7 @@
   </section>
 
   <section id="class" class="video overflow-hidden position-relative"
-    style="background-image: url(images/blog-item.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; width: 100%; height: 682px;">
+    style="background-image: url(assets/images/blog-item.jpg); background-repeat: no-repeat; background-position: center; background-attachment: fixed; width: 100%; height: 682px;">
     <div class="row">
       <div
         class="post-content position-absolute top-50 start-50 translate-middle d-flex justify-content-center align-items-center">
@@ -791,7 +791,7 @@
       <div class="row align-items-center mt-5">
         <div class="col-lg-4 col-md-6">
           <div class="post-media mb-3">
-            <img src="images/post-item1.jpg" alt="post" class="img-fluid">
+            <img src="assets/images/post-item1.jpg" alt="post" class="img-fluid">
             <div class="post-content">
               <h3 class="fs-4 my-4 mb-2 text-capitalize  ">
                 <a href="single-post.html">Best way to learn pottery</a>
@@ -805,7 +805,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="post-media mb-3">
-            <img src="images/post-item3.jpg" alt="post" class="img-fluid">
+            <img src="assets/images/post-item3.jpg" alt="post" class="img-fluid">
             <div class="post-content">
               <h3 class="fs-4 my-4 mb-2 text-capitalize  ">
                 <a href="single-post.html">How to manage the clay</a>
@@ -819,7 +819,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="post-media mb-3">
-            <img src="images/post-item4.jpg" alt="post" class="img-fluid">
+            <img src="assets/images/post-item4.jpg" alt="post" class="img-fluid">
             <div class="post-content">
               <h3 class="fs-4 my-4 mb-2 text-capitalize  ">
                 <a href="single-post.html">Give some time for glazing</a>
@@ -889,7 +889,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item1.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item1.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
@@ -901,7 +901,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item2.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item2.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
@@ -913,7 +913,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item3.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item3.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
@@ -925,7 +925,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item4.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item4.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
@@ -937,7 +937,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item5.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item5.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
@@ -949,7 +949,7 @@
         <div class="col-lg-2 col-md-6 mb-3">
           <div class="image-holder position-relative">
             <a href="https://www.instagram.com/templatesjungle/" target="_blank">
-              <img src="images/insta-item6.jpg" alt="instagram" class="img-fluid">
+              <img src="assets/images/insta-item6.jpg" alt="instagram" class="img-fluid">
               <div class="border insta-item position-absolute d-flex align-items-center justify-content-center">
                 <svg class="insta svg-white" width="25" height="25">
                   <use xlink:href="#insta"></use>
