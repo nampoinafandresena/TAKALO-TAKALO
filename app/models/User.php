@@ -1,0 +1,205 @@
+<?php
+
+class User
+{
+    private $db;
+    private $id;
+    private $pseudo;
+    private $email;
+    private $pswd;
+    private $role;
+
+    public function __construct($db = null)
+    {
+        $this->db = $db;
+    }
+
+    // Getters
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getPseudo()
+    {
+        return $this->pseudo;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getPswd()
+    {
+        return $this->pswd;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    // Setters
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+
+    public function setPseudo($pseudo)
+    {
+        $this->pseudo = $pseudo;
+        return $this;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    public function setPswd($pswd)
+    {
+        $this->pswd = password_hash($pswd, PASSWORD_BCRYPT);
+        return $this;
+    }
+
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
+    }
+
+    // CRUD Methods
+
+    /**
+     * Créer un nouvel utilisateur
+     */
+    public function create()
+    {
+        $query = $this->db->prepare(
+            "INSERT INTO users (pseudo, email, pswd, role) VALUES (:pseudo, :email, :pswd, :role)"
+        );
+
+        $query->bindParam(':pseudo', $this->pseudo);
+        $query->bindParam(':email', $this->email);
+        $query->bindParam(':pswd', $this->pswd);
+        $query->bindParam(':role', $this->role ?? 'user');
+
+        if ($query->execute()) {
+            $this->id = $this->db->lastInsertId();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Récupérer un utilisateur par ID
+     */
+    public function read($id)
+    {
+        $query = $this->db->prepare("SELECT * FROM users WHERE id = :id");
+        $query->bindParam(':id', $id);
+        $query->execute();
+
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        if ($data) {
+            $this->id = $data['id'];
+            $this->pseudo = $data['pseudo'];
+            $this->email = $data['email'];
+            $this->pswd = $data['pswd'];
+            $this->role = $data['role'];
+            return $this;
+        }
+        return null;
+    }
+
+    /**
+     * Récupérer un utilisateur par pseudo
+     */
+    public function readByPseudo($pseudo)
+    {
+        $query = $this->db->prepare("SELECT * FROM users WHERE pseudo = :pseudo");
+        $query->bindParam(':pseudo', $pseudo);
+        $query->execute();
+
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        if ($data) {
+            $this->id = $data['id'];
+            $this->pseudo = $data['pseudo'];
+            $this->email = $data['email'];
+            $this->pswd = $data['pswd'];
+            $this->role = $data['role'];
+            return $this;
+        }
+        return null;
+    }
+
+    /**
+     * Récupérer un utilisateur par email
+     */
+    public function readByEmail($email)
+    {
+        $query = $this->db->prepare("SELECT * FROM users WHERE email = :email");
+        $query->bindParam(':email', $email);
+        $query->execute();
+
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        if ($data) {
+            $this->id = $data['id'];
+            $this->pseudo = $data['pseudo'];
+            $this->email = $data['email'];
+            $this->pswd = $data['pswd'];
+            $this->role = $data['role'];
+            return $this;
+        }
+        return null;
+    }
+
+    /**
+     * Récupérer tous les utilisateurs
+     */
+    public function readAll()
+    {
+        $query = $this->db->prepare("SELECT * FROM users");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Mettre à jour un utilisateur
+     */
+    public function update()
+    {
+        $query = $this->db->prepare(
+            "UPDATE users SET pseudo = :pseudo, email = :email, pswd = :pswd, role = :role WHERE id = :id"
+        );
+
+        $query->bindParam(':id', $this->id);
+        $query->bindParam(':pseudo', $this->pseudo);
+        $query->bindParam(':email', $this->email);
+        $query->bindParam(':pswd', $this->pswd);
+        $query->bindParam(':role', $this->role);
+
+        return $query->execute();
+    }
+
+    /**
+     * Supprimer un utilisateur
+     */
+    public function delete($id)
+    {
+        $query = $this->db->prepare("DELETE FROM users WHERE id = :id");
+        $query->bindParam(':id', $id);
+        return $query->execute();
+    }
+
+    /**
+     * Vérifier le mot de passe
+     */
+    public function verifyPassword($password)
+    {
+        return password_verify($password, $this->pswd);
+    }
+}
