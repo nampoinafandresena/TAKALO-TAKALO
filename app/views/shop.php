@@ -1,3 +1,10 @@
+<?php
+use app\models\Objet;
+
+$objet = new Objet(Flight::db());
+$liste_objets = $objet->readAll();
+var_dump($liste_objets);
+?>
 <!DOCTYPE html>
 <html>
 
