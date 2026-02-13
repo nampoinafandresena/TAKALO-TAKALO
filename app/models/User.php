@@ -119,6 +119,26 @@ class User
     }
 
     /**
+     * Récupérer un utilisateur par ID (méthode statique)
+     */
+    public static function findById($db, $id){
+        $query = $db->prepare("SELECT * FROM takalo_users WHERE id = :id");
+        $query->execute([':id' => $id]);
+
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        $user = new User();
+        
+        if ($data) {
+            $user->pseudo = $data['pseudo'];
+            $user->email = $data['email'];
+            $user->pswd = $data['pswd'];
+            $user->role = $data['role'];
+            return $user;
+        }
+        return null;
+    }
+
+    /**
      * Récupérer un utilisateur par pseudo
      */
     public function readByPseudo($pseudo)
@@ -202,4 +222,6 @@ class User
     {
         return password_verify($password, $this->pswd);
     }
+
+    
 }

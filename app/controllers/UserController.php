@@ -227,6 +227,14 @@ class UserController
             'success_message' => null
         ]);
     }
-}
 
-?>
+    public function findById($id){
+        $user = User::findById($this->db, $id);
+        return $user;
+        
+    }
+
+    public static function getItemsByIduser($id){
+        
+    }
+}

@@ -2,6 +2,7 @@
 
 use app\controllers\ApiProductController;
 use app\controllers\UserController;
+use app\controllers\EchangeController;
 use app\middlewares\SecurityHeadersMiddleware;
 use flight\Engine;
 use flight\net\Router;
@@ -33,11 +34,13 @@ $router->group('', function(Router $router) use ($app) {
 	});
 
 	$router->get('/home', function() use ($app) {
-		$app->render('home');
+		$app->render('modele', ['page' => 'home', 'title'=> 'home']);
 	});
 
-	$router->get('/profile', function() use ($app) {
-		$app->render('profile');
+	$router->get('/profile/@id', function($id) use ($app) {
+		$controller = new UserController($app->db());
+		$user = $controller->findById($id);
+		$app->render('profile', ['user'=> $user]);
 	});
 
 	$router->get('/register', function() use ($app) {
@@ -51,7 +54,27 @@ $router->group('', function(Router $router) use ($app) {
 	}); 
 
 	$router->get('/shop', function() use ($app) {
-		$app->render('shop');
+		$app->render('modele', ['page' => 'shop', 'title'=> 'shop']);
+	});
+
+	$router->get('/propositions', function() use ($app) {
+		$controller = new EchangeController($app->db());
+		$controller->propositions();
+	});
+
+	$router->post('/echange/create', function() use ($app) {
+		$controller = new EchangeController($app->db());
+		$controller->create();
+	});
+
+	$router->post('/echange/accepter', function() use ($app) {
+		$controller = new EchangeController($app->db());
+		$controller->accepter();
+	});
+
+	$router->post('/echange/refuser', function() use ($app) {
+		$controller = new EchangeController($app->db());
+		$controller->refuser();
 	});
 
 	$router->get('/produit/@id', function($id) use ($app) {
