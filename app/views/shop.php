@@ -2,8 +2,12 @@
 use app\models\Objet;
 
 $objet = new Objet(Flight::db());
-$liste_objets = $objet->readAll();
-var_dump($liste_objets);
+$liste_objets = $objet->readAll_v();
+
+//var_dump($liste_objets);
+//echo $_SESSION['user_id'];
+//die();
+//echo sizeof($liste_objets);
 ?>
 <!DOCTYPE html>
 <html>
@@ -157,6 +161,9 @@ var_dump($liste_objets);
 
       <!-- ITEMS GRID -->
       <div class="row">
+        <?php for($i = 0; $i < sizeof($liste_objets); $i++) {
+          if($liste_objets[$i]['id_owner'] != $_SESSION['user_id']){
+          ?>
         <!-- Item 1 -->
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
@@ -165,31 +172,31 @@ var_dump($liste_objets);
               <span class="badge bg-success position-absolute top-0 end-0 m-2">Available</span>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Rose ceramic</h5>
-              <p class="text-muted small mb-2">Beautiful handcrafted ceramic piece with intricate rose design</p>
+              <h5 class="card-title"><?php echo $liste_objets[$i]['nom_obj']; ?></h5>
+              <p class="text-muted small mb-2"></p>
               
               <div class="row g-2 mb-3 text-sm">
                 <div class="col-6">
                   <small class="d-block text-muted"><strong>Owner:</strong></small>
                   <small class="d-flex align-items-center gap-1">
                     <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">JD</span>
-                    John Doe
+                   <?= $liste_objets[$i]['pseudo']; ?>
                   </small>
                 </div>
-                <div class="col-6">
+                <!--<div class="col-6">
                   <small class="d-block text-muted"><strong>Value:</strong></small>
                   <small class="text-primary fw-bold">$14.00</small>
-                </div>
+                </div>-->
               </div>
 
               <div class="row g-2 mb-3 text-sm">
                 <div class="col-6">
                   <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Like New</small>
+                  <small><?= $liste_objets[$i]['description']; ?></small>
                 </div>
                 <div class="col-6">
                   <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 8, 2026</small>
+                  <small><?= $liste_objets[$i]['date_publication']; ?></small>
                 </div>
               </div>
 
@@ -204,9 +211,10 @@ var_dump($liste_objets);
             </div>
           </div>
         </div>
+        <?php }} ?>
 
         <!-- Item 2 -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
               <img src="assets/images/product-item5.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
@@ -217,44 +225,45 @@ var_dump($liste_objets);
               <p class="text-muted small mb-2">Elegant purple ceramic design with floral motifs</p>
               
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Owner:</strong></small>
-                  <small class="d-flex align-items-center gap-1">
-                    <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">SM</span>
-                    Sarah Miller
-                  </small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$14.00</small>
-                </div>
+
+              <div class="col-6">
+            <small class="d-block text-muted"><strong>Owner:</strong></small>
+            <small class="d-flex align-items-center gap-1">
+              <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">SM</span>
+              Sarah Miller
+            </small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Value:</strong></small>
+            <small class="text-primary fw-bold">$14.00</small>
+          </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Good</small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 7, 2026</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Condition:</strong></small>
+            <small>Good</small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Posted:</strong></small>
+            <small>Feb 7, 2026</small>
+          </div>
               </div>
 
               <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
-                  <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
-                    <use xlink:href="#trade"></use>
-                  </svg>
-                  Propose Trade
-                </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
+            <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
+              <use xlink:href="#trade"></use>
+            </svg>
+            Propose Trade
+          </button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Item 3 -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
               <img src="assets/images/product-item2.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
@@ -265,44 +274,44 @@ var_dump($liste_objets);
               <p class="text-muted small mb-2">Floral ceramic piece with apple motif and detailed patterns</p>
               
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Owner:</strong></small>
-                  <small class="d-flex align-items-center gap-1">
-                    <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">MC</span>
-                    Mike Chen
-                  </small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$14.00</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Owner:</strong></small>
+            <small class="d-flex align-items-center gap-1">
+              <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">MC</span>
+              Mike Chen
+            </small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Value:</strong></small>
+            <small class="text-primary fw-bold">$14.00</small>
+          </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Like New</small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 6, 2026</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Condition:</strong></small>
+            <small>Like New</small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Posted:</strong></small>
+            <small>Feb 6, 2026</small>
+          </div>
               </div>
 
               <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
-                  <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
-                    <use xlink:href="#trade"></use>
-                  </svg>
-                  Propose Trade
-                </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
+            <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
+              <use xlink:href="#trade"></use>
+            </svg>
+            Propose Trade
+          </button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Item 4 -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
               <img src="assets/images/product-item3.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
@@ -313,44 +322,44 @@ var_dump($liste_objets);
               <p class="text-muted small mb-2">Artistic butterfly design ceramic with vibrant colors</p>
               
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Owner:</strong></small>
-                  <small class="d-flex align-items-center gap-1">
-                    <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">EJ</span>
-                    Emma Johnson
-                  </small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$14.00</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Owner:</strong></small>
+            <small class="d-flex align-items-center gap-1">
+              <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">EJ</span>
+              Emma Johnson
+            </small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Value:</strong></small>
+            <small class="text-primary fw-bold">$14.00</small>
+          </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Good</small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 5, 2026</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Condition:</strong></small>
+            <small>Good</small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Posted:</strong></small>
+            <small>Feb 5, 2026</small>
+          </div>
               </div>
 
               <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
-                  <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
-                    <use xlink:href="#trade"></use>
-                  </svg>
-                  Propose Trade
-                </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
+            <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
+              <use xlink:href="#trade"></use>
+            </svg>
+            Propose Trade
+          </button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Item 5 -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
               <img src="assets/images/product-item4.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
@@ -361,44 +370,44 @@ var_dump($liste_objets);
               <p class="text-muted small mb-2">Spiced ceramic collection item with traditional design</p>
               
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Owner:</strong></small>
-                  <small class="d-flex align-items-center gap-1">
-                    <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">RP</span>
-                    Raj Patel
-                  </small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$13.00</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Owner:</strong></small>
+            <small class="d-flex align-items-center gap-1">
+              <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">RP</span>
+              Raj Patel
+            </small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Value:</strong></small>
+            <small class="text-primary fw-bold">$13.00</small>
+          </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Fair</small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 4, 2026</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Condition:</strong></small>
+            <small>Fair</small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Posted:</strong></small>
+            <small>Feb 4, 2026</small>
+          </div>
               </div>
 
               <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
-                  <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
-                    <use xlink:href="#trade"></use>
-                  </svg>
-                  Propose Trade
-                </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
+            <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
+              <use xlink:href="#trade"></use>
+            </svg>
+            Propose Trade
+          </button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Item 6 -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- <div class="col-lg-4 col-md-6 mb-4">
           <div class="card shadow-sm h-100 border-0">
             <div class="image-holder position-relative" style="height: 280px; overflow: hidden;">
               <img src="assets/images/product-item1.jpg" alt="ceramic" class="img-fluid w-100 h-100" style="object-fit: cover;">
@@ -409,41 +418,41 @@ var_dump($liste_objets);
               <p class="text-muted small mb-2">Classic roselle pattern ceramic with timeless appeal</p>
               
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Owner:</strong></small>
-                  <small class="d-flex align-items-center gap-1">
-                    <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">LA</span>
-                    Lisa Anderson
-                  </small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$12.00</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Owner:</strong></small>
+            <small class="d-flex align-items-center gap-1">
+              <span class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 10px;">LA</span>
+              Lisa Anderson
+            </small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Value:</strong></small>
+            <small class="text-primary fw-bold">$12.00</small>
+          </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Condition:</strong></small>
-                  <small>Like New</small>
-                </div>
-                <div class="col-6">
-                  <small class="d-block text-muted"><strong>Posted:</strong></small>
-                  <small>Feb 3, 2026</small>
-                </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Condition:</strong></small>
+            <small>Like New</small>
+          </div>
+          <div class="col-6">
+            <small class="d-block text-muted"><strong>Posted:</strong></small>
+            <small>Feb 3, 2026</small>
+          </div>
               </div>
 
               <div class="d-grid">
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
-                  <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
-                    <use xlink:href="#trade"></use>
-                  </svg>
-                  Propose Trade
-                </button>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeModal">
+            <svg class="trade" width="18" height="18" style="display: inline; margin-right: 5px;">
+              <use xlink:href="#trade"></use>
+            </svg>
+            Propose Trade
+          </button>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
