@@ -33,7 +33,7 @@ $router->group('', function(Router $router) use ($app) {
 	});
 
 	$router->get('/home', function() use ($app) {
-		$app->render('home');
+		$app->render('modele', ['page' => 'home']);
 	});
 
 	$router->get('/profile', function() use ($app) {
