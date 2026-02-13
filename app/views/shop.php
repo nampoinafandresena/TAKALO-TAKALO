@@ -183,10 +183,10 @@ $liste_objets = $objet->readAll_v();
                    <?= $liste_objets[$i]['pseudo']; ?>
                   </small>
                 </div>
-                <!--<div class="col-6">
+                <div class="col-6">
                   <small class="d-block text-muted"><strong>Value:</strong></small>
-                  <small class="text-primary fw-bold">$14.00</small>
-                </div>-->
+                  <small class="text-primary fw-bold">$<?= $liste_objets[$i]['prix_estimatif']; ?></small>
+                </div>
               </div>
 
               <div class="row g-2 mb-3 text-sm">
@@ -471,9 +471,10 @@ $liste_objets = $objet->readAll_v();
               <label for="tradeItem" class="form-label">Select your item to trade</label>
               <select class="form-select" id="tradeItem" required>
                 <option value="">Choose an item from your collection...</option>
-                <option value="rose">Rose ceramic - $14.00</option>
-                <option value="purple">Purple Rose ceramic - $14.00</option>
-                <option value="apple">Apple Flower ceramic - $14.00</option>
+                 <?php for($i = 0; $i < sizeof($liste_objets); $i++) {
+               if($liste_objets[$i]['id_owner'] == $_SESSION['user_id']){ ?>
+                  <option value="<?= $liste_objets[$i]['id']; ?>"><?= $liste_objets[$i]['nom_obj']; ?> - $<?= $liste_objets[$i]['prix_estimatif']; ?></option>
+                  <?php } } ?>
               </select>
             </div>
             <div class="mb-3">

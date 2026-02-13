@@ -114,7 +114,7 @@
         </symbol>
     </svg>
 
-    <div class="preloader">
+    <!--<div class="preloader">
         <div class="loader">
         <div class="dot">
             <svg class="vase svg-primary" width="40" height="40">
@@ -132,7 +132,7 @@
             </svg>
         </div>
         </div>
-    </div>
+    </div>-->
 
 
     <!-- CART -->
