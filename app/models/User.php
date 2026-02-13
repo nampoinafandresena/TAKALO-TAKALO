@@ -83,7 +83,7 @@ class User
     public function create()
     {
         $query = $this->db->prepare(
-            "INSERT INTO users (pseudo, email, pswd, role) VALUES (:pseudo, :email, :pswd, :role)"
+            "INSERT INTO takalo_users (pseudo, email, pswd, role) VALUES (:pseudo, :email, :pswd, :role)"
         );
 
         if ($query->execute([
@@ -103,7 +103,7 @@ class User
      */
     public function read($id)
     {
-        $query = $this->db->prepare("SELECT * FROM users WHERE id = :id");
+        $query = $this->db->prepare("SELECT * FROM takalo_users WHERE id = :id");
         $query->execute([':id' => $id]);
 
         $data = $query->fetch(PDO::FETCH_ASSOC);
@@ -123,7 +123,7 @@ class User
      */
     public function readByPseudo($pseudo)
     {
-        $query = $this->db->prepare("SELECT * FROM users WHERE pseudo = :pseudo");
+        $query = $this->db->prepare("SELECT * FROM takalo_users WHERE pseudo = :pseudo");
         $query->execute([':pseudo' => $pseudo]);
 
         $data = $query->fetch(PDO::FETCH_ASSOC);
@@ -143,7 +143,7 @@ class User
      */
     public function readByEmail($email)
     {
-        $query = $this->db->prepare("SELECT * FROM users WHERE email = :email");
+        $query = $this->db->prepare("SELECT * FROM takalo_users WHERE email = :email");
         $query->execute([':email' => $email]);
 
         $data = $query->fetch(PDO::FETCH_ASSOC);
@@ -163,7 +163,7 @@ class User
      */
     public function readAll()
     {
-        $query = $this->db->prepare("SELECT * FROM users");
+        $query = $this->db->prepare("SELECT * FROM takalo_users");
         $query->execute();
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -174,7 +174,7 @@ class User
     public function update()
     {
         $query = $this->db->prepare(
-            "UPDATE users SET pseudo = :pseudo, email = :email, pswd = :pswd, role = :role WHERE id = :id"
+            "UPDATE takalo_users SET pseudo = :pseudo, email = :email, pswd = :pswd, role = :role WHERE id = :id"
         );
 
         return $query->execute([
@@ -191,7 +191,7 @@ class User
      */
     public function delete($id)
     {
-        $query = $this->db->prepare("DELETE FROM users WHERE id = :id");
+        $query = $this->db->prepare("DELETE FROM takalo_users WHERE id = :id");
         return $query->execute([':id' => $id]);
     }
 
