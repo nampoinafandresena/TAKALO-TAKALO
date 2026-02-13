@@ -237,5 +237,4 @@ class UserController
     public static function getItemsByIduser($id){
         
     }
-
-?>
+}
